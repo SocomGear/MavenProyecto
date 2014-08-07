@@ -18,7 +18,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
+
 
 /**
  *
@@ -26,11 +26,9 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "equipo")
-@NamedQueries({
-    @NamedQuery(name = "Equipo.findAll", query = "SELECT e FROM Equipo e")})
+
 public class Equipo implements Serializable {
-    @OneToMany(mappedBy = "idEquipo")
-    private Collection<Jugador> jugadorCollection;
+ 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,11 +36,11 @@ public class Equipo implements Serializable {
     @Column(name = "id_equipo")
     private Integer idEquipo;
     
-    @Size(max = 80)
+    
     @Column(name = "nombre")
     private String nombre;
     
-    @Size(max = 80)
+   
     @Column(name = "pais")
     private String pais;
 
@@ -107,12 +105,6 @@ public class Equipo implements Serializable {
         return "com.gonzalez.mavenproyecto.Equipo[ idEquipo=" + idEquipo + " ]";
     }
 
-    public Collection<Jugador> getJugadorCollection() {
-        return jugadorCollection;
-    }
-
-    public void setJugadorCollection(Collection<Jugador> jugadorCollection) {
-        this.jugadorCollection = jugadorCollection;
-    }
+   
     
 }
