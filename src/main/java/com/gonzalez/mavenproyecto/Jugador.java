@@ -45,8 +45,7 @@ public class Jugador implements Serializable {
     @JoinColumn(name = "id_equipo", referencedColumnName = "id_equipo")
     @ManyToOne
     private Equipo idEquipo;
-    @OneToMany(mappedBy = "idJugador")
-    private Collection<Sueldo> sueldoCollection;
+    
 
     public Jugador() {
     }
@@ -101,13 +100,7 @@ public Jugador(String nombre, int numero, String nacionalidad, Equipo idEquipo) 
         this.idEquipo = idEquipo;
     }
 
-    public Collection<Sueldo> getSueldoCollection() {
-        return sueldoCollection;
-    }
 
-    public void setSueldoCollection(Collection<Sueldo> sueldoCollection) {
-        this.sueldoCollection = sueldoCollection;
-    }
 
     @Override
     public int hashCode() {

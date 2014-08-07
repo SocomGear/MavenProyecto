@@ -12,4 +12,4 @@ create table jugador (id_jugador integer primary key auto_increment, id_equipo i
 create table sueldo (id_jugador integer , id_sueldo integer auto_increment primary key, sueldo float,
                      constraint foreign key(id_jugador) references jugador(id_jugador));
 
-select * from jugador;
+select * from equipo;
