@@ -30,7 +30,7 @@ public class ControladorJugador {
             d.agregarJugador(new Jugador(nombre, numero, nacionalidad,new Equipo(id) ));
            mensaje= "Jugador guardado con exito";
         }catch(Exception e){
-            mensaje="Lo siento pero lo existe ese id de usuario";
+            mensaje="Lo siento pero no existe ese id de equipo";
         }
         return mensaje;
     }

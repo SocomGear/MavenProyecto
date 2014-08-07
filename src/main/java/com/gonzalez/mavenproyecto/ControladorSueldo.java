@@ -29,7 +29,7 @@ public class ControladorSueldo {
             d.agregarSueldo(new Sueldo(sueldo,new Jugador(id) ));
            mensaje= "Sueldo guardado con exito";
         }catch(Exception e){
-            mensaje="Lo siento pero lo existe ese id de usuario";
+            mensaje="Lo siento pero no existe ese id de jugador";
         }
         return mensaje;
     }
