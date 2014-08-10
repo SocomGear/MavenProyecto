@@ -1,6 +1,6 @@
 <%-- 
-    Document   : sueldo
-    Created on : 10/08/2014, 01:47:28 PM
+    Document   : jugador
+    Created on : 10/08/2014, 01:21:32 PM
     Author     : socom_000
 --%>
 
@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <title>Sueldo jugador</title>
+        <title>Jugador</title>
     </head>
     <body>
         <center>
@@ -19,21 +19,32 @@
         
         <p>
             <b>
-                Inserta el sueldo del jugador
+                Inserta los datos del jugador
             </b>
             <p>
                 <b>
-                    Sueldo:
-        <input type="text" id="sueldo" />
+                    Nombre:
+        <input type="text" id="nombre" />
                 </b>
         <p>
-           <b>
-                    Id Jugador:
-        <input type="text" id="id" />
-                </b>
+            <b>
+                Numero:
+        <input type="text" id="numero" />
+            </b>
         <p>
-        <input type="button" value="Guardar sueldo" id="boton-guardar">
-        <input type="button" value="Mostrar sueldo" id="boton-mostrar" >
+            <b>
+                Nacionalidad:
+                <input type="text" id="nacionalidad" />
+            </b>
+            <p>
+            <b>
+                Id Equipo:
+                <input type="text" id="id" />
+            </b>
+        <p>
+        <input type="button" value="Guardar jugador" id="boton-guardar">
+        <input type="button" value="Mostrar jugador" id="boton-mostrar" >
+        <input type="button" value="Borrar jugador" onClick="location.href = 'borrar.jsp' ">
        <input type="button" value="Inicio" onClick="location.href = 'index.jsp' ">
         </center>
         <select name="nombres" id="todos" hidden>
@@ -45,19 +56,21 @@
        $("#boton-mostrar").click(function(){ 
         $("#todos").show();/* Este hace que se vea la chingadera de menu */   
         $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el select de html */   
-  $.getJSON("http://localhost:8091/MavenProyecto/servicios/sueldo",function(result){
+  $.getJSON("http://localhost:8091/MavenProyecto/servicios/jugador",function(result){
     $.each(result, function(i, campo){
-      $("#todos").append("<option>"+campo.sueldo + "</option> ");
+      $("#todos").append("<option>"+campo.nombre + "</option> ");
     });
   });
 });
 
 $("#boton-guardar").click(function(){
-    var sueldo=$("#sueldo").val();
+    var nombre=$("#nombre").val();
+    var numero=$("#numero").val();
+    var nacionalidad=$("#nacionalidad").val();
     var id=$("#id").val();
                 $.ajax({
         method:'GET',
-        url:"http://localhost:8091/MavenProyecto/servicios/sueldo/"+sueldo+"/"+id,
+        url:"http://localhost:8091/MavenProyecto/servicios/jugador/"+nombre+"/"+numero+"/"+nacionalidad+"/"+id,
         success:function(valor){
             alert(valor);
         },
@@ -75,4 +88,3 @@ $("#boton-guardar").click(function(){
         <div></div>
     </body>
 </html>
-

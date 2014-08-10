@@ -46,7 +46,7 @@ return equipos;
      * Este metodo borra un cliente
      * @param p Se le debe pasar un parametro de tipo cliente para ser borrado
      */
- public void borrarAlumno(Equipo p){
+ public void borrarEquipo(Equipo p){
             begin();
              getSession().delete(p);
             commit();

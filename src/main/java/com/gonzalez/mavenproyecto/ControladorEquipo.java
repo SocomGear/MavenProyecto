@@ -35,5 +35,10 @@ public class ControladorEquipo {
             
         return maper.writeValueAsString(d.buscarTodosEquipo());
     }
-    
+     @RequestMapping(value = "/equipo/{id}/{nombre}", method = RequestMethod.DELETE, headers = {"Accept=text/html"})
+    public @ResponseBody String eliminar(@PathVariable int id,@PathVariable String nombre){
+        DAOEquipoImpl d= new DAOEquipoImpl();
+           d.borrarEquipo(new Equipo(id));
+           return "Equipo borrado con exito";
+        }
 }
