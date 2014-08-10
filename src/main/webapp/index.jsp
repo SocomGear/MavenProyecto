@@ -5,6 +5,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <title>Mi pagina web</title>
     </head>
     <body>
@@ -28,18 +30,22 @@
         <p>
         <input type="button" value="Guardar equipo" id="boton-guardar">
         <input type="button" value="Mostrar equipos" id="boton-mostrar" >
-       </center>
+       <input type="button" value="Jugador" onClick="location.href = 'index2.jsp' ">
+
+       
+        </center>
         <select name="nombres" id="todos" hidden>
              
             </select>
+       
         <script>
         
        $("#boton-mostrar").click(function(){ 
         $("#todos").show();/* Este hace que se vea la chingadera de menu */   
         $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el select de html */   
-  $.getJSON("http://localhost:8089/MavenProyecto/servicios/equipo",function(result){
+  $.getJSON("http://localhost:8091/MavenProyecto/servicios/equipo",function(result){
     $.each(result, function(i, campo){
-      $("#todos").append("<option>"+campo.nombre +  "</option> " );
+      $("#todos").append("<option>"+campo.nombre + "</option> ");
     });
   });
 });
@@ -48,8 +54,8 @@ $("#boton-guardar").click(function(){
     var nombre=$("#nombre").val();
     var pais=$("#pais").val();
                 $.ajax({
-        method:'POST',
-        url:"http://localhost:8089/MavenProyecto/servicios/equipo/"+nombre+"/"+pais,
+        method:'GET',
+        url:"http://localhost:8091/MavenProyecto/servicios/equipo/"+nombre+"/"+pais,
         success:function(valor){
             alert(valor);
         },
@@ -59,10 +65,11 @@ $("#boton-guardar").click(function(){
     });
 });
 
+   
 
 
         </script>
-      
+        
         <div></div>
     </body>
 </html>
