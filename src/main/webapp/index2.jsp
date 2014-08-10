@@ -68,7 +68,7 @@ $("#boton-guardar").click(function(){
     var nacionalidad=$("#nacionalidad").val();
     var id=$("#id").val();
                 $.ajax({
-        method:'POST',
+        method:'GET',
         url:"http://localhost:8091/MavenProyecto/servicios/jugador/"+nombre+"/"+numero+"/"+nacionalidad+"/"+id,
         success:function(valor){
             alert(valor);

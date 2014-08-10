@@ -24,10 +24,14 @@
             <p>
                 <b>
                     Sueldo:
-        <input type="text" id="nombre" />
+        <input type="text" id="sueldo" />
                 </b>
         <p>
-           
+           <b>
+                    Id Jugador:
+        <input type="text" id="id" />
+                </b>
+        <p>
         <input type="button" value="Guardar sueldo" id="boton-guardar">
         <input type="button" value="Mostrar sueldo" id="boton-mostrar" >
        <input type="button" value="Inicio" onClick="location.href = 'index.jsp' ">
@@ -41,7 +45,7 @@
        $("#boton-mostrar").click(function(){ 
         $("#todos").show();/* Este hace que se vea la chingadera de menu */   
         $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el select de html */   
-  $.getJSON("http://localhost:8089/MavenProyecto/servicios/sueldo",function(result){
+  $.getJSON("http://localhost:8091/MavenProyecto/servicios/sueldo",function(result){
     $.each(result, function(i, campo){
       $("#todos").append("<option>"+campo.sueldo + "</option> ");
     });
@@ -50,9 +54,10 @@
 
 $("#boton-guardar").click(function(){
     var sueldo=$("#sueldo").val();
+    var id=$("#id").val();
                 $.ajax({
         method:'GET',
-        url:"http://localhost:8089/MavenProyecto/servicios/sueldo/"+sueldo,
+        url:"http://localhost:8091/MavenProyecto/servicios/sueldo/"+sueldo+"/"+id,
         success:function(valor){
             alert(valor);
         },
