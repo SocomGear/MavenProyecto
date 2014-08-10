@@ -5,9 +5,64 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Mi pagina web</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <center>
+        <h1>Bienvenidos weyes!!!!!!</h1>
+        
+        <p>
+            <b>
+                Inserta los valores
+            </b>
+            <p>
+                <b>
+                    Equipo:
+        <input type="text" id="nombre" />
+                </b>
+        <p>
+            <b>
+                Pais:
+        <input type="text" id="pais" />
+            </b>
+        <p>
+        <input type="button" value="Guardar equipo" id="boton-guardar">
+        <input type="button" value="Mostrar equipos" id="boton-mostrar" >
+       </center>
+        <select name="nombres" id="todos" hidden>
+             
+            </select>
+        <script>
+        
+       $("#boton-mostrar").click(function(){ 
+        $("#todos").show();/* Este hace que se vea la chingadera de menu */   
+        $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el select de html */   
+  $.getJSON("http://localhost:8089/MavenProyecto/servicios/equipo",function(result){
+    $.each(result, function(i, campo){
+      $("#todos").append("<option>"+campo.nombre +  "</option> " );
+    });
+  });
+});
+
+$("#boton-guardar").click(function(){
+    var nombre=$("#nombre").val();
+    var pais=$("#pais").val();
+                $.ajax({
+        method:'POST',
+        url:"http://localhost:8089/MavenProyecto/servicios/equipo/"+nombre+"/"+pais,
+        success:function(valor){
+            alert(valor);
+        },
+        failure:function(e){
+            alert(e);
+        }
+    });
+});
+
+
+
+        </script>
+      
+        <div></div>
     </body>
 </html>
