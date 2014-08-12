@@ -32,7 +32,7 @@
         <input type="text" id="cantidad" />
                 </b>
         <p> 
-        <input type="button" value="Borrar equipo" id="boton-borrar">
+        <input type="button" value="Borrar sueldo" id="boton-borrar">
         
        <input type="button" value="Inicio" onClick="location.href = 'index.jsp' ">
 

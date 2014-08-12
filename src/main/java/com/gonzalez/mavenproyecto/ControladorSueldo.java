@@ -46,9 +46,9 @@ public class ControladorSueldo {
         
         try {
             DAOSueldoImpl.borrarSueldo(new Sueldo(id));
-            return "El jugador se ha eliminado";
+            return "Sueldo eliminado con exito";
         } catch (Exception e) {
-            return "No seas wey no coinciden los datos del jugador";
+            return "No seas wey no coinciden los datos";
         }
         
     }
