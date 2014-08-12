@@ -48,7 +48,8 @@
         $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el select de html */   
   $.getJSON("http://localhost:8091/MavenProyecto/servicios/sueldo",function(result){
     $.each(result, function(i, campo){
-      $("#todos").append("<option>"+campo.sueldo + "</option> ");
+        $("#todos").append("<option>"+'Id:'+'&nbsp'+campo.idSueldo+'&nbsp'+'Sueldo:$'+'&nbsp'+campo.sueldo +'&nbsp'+'Id Jugador:'+'&nbsp'+campo.idJugador+ "</option> ");
+      
     });
   });
 });
