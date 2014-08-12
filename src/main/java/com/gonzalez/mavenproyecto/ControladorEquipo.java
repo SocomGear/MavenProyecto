@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class ControladorEquipo {
     
-    @RequestMapping(value="/equipo/{nombre}/{pais}", method=RequestMethod.GET, headers={"Accept=text/html"})
+    @RequestMapping(value="/equipo/{nombre}/{pais}", method=RequestMethod.POST, headers={"Accept=text/html"})
     public @ResponseBody String mensaje(@PathVariable String nombre, @PathVariable String pais){
            DAOEquipoImpl d= new DAOEquipoImpl();
            d.agregarEquipo(new Equipo(nombre, pais));
@@ -35,8 +35,8 @@ public class ControladorEquipo {
             
         return maper.writeValueAsString(d.buscarTodosEquipo());
     }
-     @RequestMapping(value = "/equipo/{id}/{nombre}", method = RequestMethod.DELETE, headers = {"Accept=text/html"})
-    public @ResponseBody String eliminar(@PathVariable int id,@PathVariable String nombre){
+     @RequestMapping(value = "/equipo/{id}/{equipo}", method = RequestMethod.DELETE, headers = {"Accept=text/html"})
+    public @ResponseBody String eliminar(@PathVariable int id,@PathVariable String equipo){
         DAOEquipoImpl d= new DAOEquipoImpl();
            d.borrarEquipo(new Equipo(id));
            return "Equipo borrado con exito";

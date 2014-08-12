@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class ControladorJugador {
     
-    @RequestMapping(value="/jugador/{nombre}/{numero}/{nacionalidad}/{id}", method=RequestMethod.GET, headers={"Accept=text/html"})
+    @RequestMapping(value="/jugador/{nombre}/{numero}/{nacionalidad}/{id}", method=RequestMethod.POST, headers={"Accept=text/html"})
     public @ResponseBody String mensaje(@PathVariable String nombre, @PathVariable int 
             numero,@PathVariable String nacionalidad, @PathVariable int id ){
         String mensaje="nada";

@@ -55,7 +55,7 @@ $("#boton-guardar").click(function(){
     var nombre=$("#nombre").val();
     var pais=$("#pais").val();
                 $.ajax({
-        method:'GET',
+        method:'POST',
         url:"http://localhost:8091/MavenProyecto/servicios/equipo/"+nombre+"/"+pais,
         success:function(valor){
             alert(valor);

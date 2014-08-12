@@ -47,6 +47,12 @@ public class Equipo implements Serializable {
     public Equipo() {
     }
 
+    public Equipo(Integer idEquipo, String nombre, String pais) {
+        this.idEquipo = idEquipo;
+        this.nombre = nombre;
+        this.pais = pais;
+    }
+
     public Equipo(Integer idEquipo) {
         this.idEquipo = idEquipo;
     }

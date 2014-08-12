@@ -26,10 +26,6 @@ public class DAOEquipoImpl extends DAO{
     
     }
  
-       /**
-        * Este metodo obtiene todos los registros de la tabla cliente 
-        * @return Este metodo nos regresa todos los clientes
-        */
     public ArrayList<Equipo> buscarTodosEquipo() {
         begin();
         Query q = getSession().createQuery("from Equipo");
@@ -42,21 +38,14 @@ return equipos;
         
       
     }
-    /**
-     * Este metodo borra un cliente
-     * @param p Se le debe pasar un parametro de tipo cliente para ser borrado
-     */
- public void borrarEquipo(Equipo p){
+ 
+ public void borrarEquipo(Equipo equipo){
             begin();
-             getSession().delete(p);
+             getSession().delete(equipo);
             commit();
             close();
  }   
-        /**
-         * Este metodo busca un cliente por medio de su Id
-         * @param id Este parametro es el Id del cliente que se quiere buscar
-         * @return El tipo de retorno es el cliente buscado
-         */
+        
   public Equipo buscarPorId(int id){
       begin();
      Query q = getSession().createQuery("from Equipo where id = :id");

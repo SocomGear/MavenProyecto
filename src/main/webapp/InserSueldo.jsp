@@ -57,7 +57,7 @@ $("#boton-guardar").click(function(){
     var sueldo=$("#sueldo").val();
     var id=$("#id").val();
                 $.ajax({
-        method:'GET',
+        method:'POST',
         url:"http://localhost:8091/MavenProyecto/servicios/sueldo/"+sueldo+"/"+id,
         success:function(valor){
             alert(valor);
