@@ -26,9 +26,9 @@
             <p>
                 
         <p>
-        <input type="button" value="Insertar equipo" onClick="location.href = 'InserEquipo.jsp' ">
-        <input type="button" value="Insertar jugador" onClick="location.href = 'InserJugador.jsp' ">
-        <input type="button" value="Insertar sueldo" onClick="location.href = 'InserSueldo.jsp' ">
+        <input type="button" value="Equipo" onClick="location.href = 'InserEquipo.jsp' ">
+        <input type="button" value="Jugador" onClick="location.href = 'InserJugador.jsp' ">
+        <input type="button" value="Sueldo" onClick="location.href = 'InserSueldo.jsp' ">
        
 
        

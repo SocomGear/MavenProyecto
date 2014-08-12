@@ -42,9 +42,7 @@ public class Jugador implements Serializable {
     private Integer numero;
     @Column(name = "nacionalidad")
     private String nacionalidad;
-    @JoinColumn(name = "id_equipo", referencedColumnName = "id_equipo")
-    @ManyToOne
-    private Equipo idEquipo;
+    
     
 
     public Jugador() {
@@ -57,7 +55,7 @@ public Jugador(String nombre, int numero, String nacionalidad, Equipo idEquipo) 
         this.nombre = nombre;
         this.numero = numero;
         this.nacionalidad = nacionalidad;
-        this.idEquipo=idEquipo;    
+        
 }
 
     public Integer getIdJugador() {
@@ -92,13 +90,9 @@ public Jugador(String nombre, int numero, String nacionalidad, Equipo idEquipo) 
         this.nacionalidad = nacionalidad;
     }
 
-    public Equipo getIdEquipo() {
-        return idEquipo;
-    }
+    
 
-    public void setIdEquipo(Equipo idEquipo) {
-        this.idEquipo = idEquipo;
-    }
+    
 
 
 

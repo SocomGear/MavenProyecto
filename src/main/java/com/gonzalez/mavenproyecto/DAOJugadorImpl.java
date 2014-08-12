@@ -16,7 +16,7 @@ import org.hibernate.Query;
  *
  * @author socom_000
  */
-public class DAOJugadorImpl extends DAO{
+public class DAOJugadorImpl extends DAO1{
     
     public void agregarJugador(Jugador c) {
     begin();
@@ -28,10 +28,7 @@ public class DAOJugadorImpl extends DAO{
     
     }
  
-       /**
-        * Este metodo obtiene todos los registros de la tabla cliente 
-        * @return Este metodo nos regresa todos los clientes
-        */
+       
     public ArrayList<Jugador> buscarTodosJugador() {
         begin();
       //  Query q = getSession().createQuery("from Usuario");
@@ -44,21 +41,14 @@ return jugadores;
         
       
     }
-    /**
-     * Este metodo borra un cliente
-     * @param p Se le debe pasar un parametro de tipo cliente para ser borrado
-     */
- public void borrarJugador(Jugador p){
+    
+ public static void borrarJugador(Jugador jugador){
             begin();
-             getSession().delete(p);
+             getSession().delete(jugador);
             commit();
             close();
  }   
-        /**
-         * Este metodo busca un cliente por medio de su Id
-         * @param id Este parametro es el Id del cliente que se quiere buscar
-         * @return El tipo de retorno es el cliente buscado
-         */
+        
   public Jugador buscarPorId(int id){
       begin();
      Query q = getSession().createQuery("from Jugador where id = :id");

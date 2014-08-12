@@ -42,5 +42,16 @@ public class ControladorJugador {
             
         return maper.writeValueAsString(d.buscarTodosJugador());
     }
+    @RequestMapping(value = "/jugador/{id}/{nombre}", method = RequestMethod.DELETE, headers = {"Accept=text/html"})
+    public @ResponseBody String eliminar(@PathVariable int id, @PathVariable String nombre){
+        
+        try {
+            DAOJugadorImpl.borrarJugador(new Jugador(id));
+            return "El jugador se ha eliminado";
+        } catch (Exception e) {
+            return "No seas wey no coinciden los datos del jugador";
+        }
+        
+    }
 }
 

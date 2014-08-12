@@ -34,7 +34,7 @@
         <p>
         <input type="button" value="Guardar sueldo" id="boton-guardar">
         <input type="button" value="Mostrar sueldo" id="boton-mostrar" >
-        <input type="button" value="Borrar sueldo" onClick="location.href = 'borrar.jsp' ">
+        <input type="button" value="Borrar sueldo" onClick="location.href = 'borrarS.jsp' ">
        <input type="button" value="Inicio" onClick="location.href = 'index.jsp' ">
         </center>
         <select name="nombres" id="todos" hidden>

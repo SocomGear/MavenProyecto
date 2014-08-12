@@ -15,7 +15,7 @@
         
         <p>
             <b>
-                Inserta los valores
+                Inserta los valores del equipo
             </b>
             <p>
                 <b>
@@ -30,7 +30,7 @@
         <p>
         <input type="button" value="Guardar equipo" id="boton-guardar">
         <input type="button" value="Mostrar equipos" id="boton-mostrar" >
-        <input type="button" value="Borrar equipo" onClick="location.href = 'borrar.jsp' ">
+        <input type="button" value="Borrar equipo" onClick="location.href = 'borrarE.jsp' ">
        <input type="button" value="Inicio" onClick="location.href = 'index.jsp' ">
 
        

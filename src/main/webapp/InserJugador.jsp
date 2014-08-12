@@ -44,7 +44,7 @@
         <p>
         <input type="button" value="Guardar jugador" id="boton-guardar">
         <input type="button" value="Mostrar jugador" id="boton-mostrar" >
-        <input type="button" value="Borrar jugador" onClick="location.href = 'borrar.jsp' ">
+        <input type="button" value="Borrar jugador" onClick="location.href = 'borrarJ.jsp' ">
        <input type="button" value="Inicio" onClick="location.href = 'index.jsp' ">
         </center>
         <select name="nombres" id="todos" hidden>

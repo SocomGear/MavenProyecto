@@ -16,7 +16,7 @@ import org.hibernate.Query;
  *
  * @author socom_000
  */
-public class DAOEquipoImpl extends DAO{
+public class DAOEquipoImpl extends DAO1{
     
     public void agregarEquipo(Equipo equipo) {
     begin();
@@ -39,7 +39,7 @@ return equipos;
       
     }
  
- public void borrarEquipo(Equipo equipo){
+ public static void borrarEquipo(Equipo equipo){
             begin();
              getSession().delete(equipo);
             commit();
